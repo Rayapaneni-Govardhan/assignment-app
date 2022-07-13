@@ -1,1 +1,15 @@
-<p>products works!</p>
+<!-- <app-banner></app-banner> -->
+<!-- <button> -->
+<div class="icons">
+  <a [routerLink]="['/products/grid-view']" class="link" routerLinkActive="active"
+    ><i class="fa fa-th-large grid-icon" aria-hidden="true"></i
+  ></a>
+  <!-- </button> -->
+  <!-- <button> -->
+  <a [routerLink]="['/products/list-view']" class="link" routerLinkActive="active"
+    ><i class="fa fa-th-list list-icon" aria-hidden="true"></i
+  ></a>
+</div>
+<div class="icons-filler"></div>
+<!-- </button> -->
+<router-outlet></router-outlet>

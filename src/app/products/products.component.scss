@@ -1,0 +1,42 @@
+.link {
+    background: #f2f2f2;
+  color: black;
+  display: inline-block;
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+}
+.active {
+  background-color: #d9d9d9;
+  color: black;
+  display: inline-block;
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+}
+.grid-icon,
+.list-icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+  height: 100%;
+  font-size: 25px;
+  
+}
+.icons {
+  display: flex;
+  padding: 15px 27px 15px 61px;
+  position: fixed;
+  background: #f2f2f2;;
+  width: 100%;
+  z-index: 9998;
+}
+.icons-filler {
+  display: flex;
+  padding: 15px 27px 15px 27px;
+  width: 43px;
+  height: 43px;
+  background: white;
+}

@@ -1,0 +1,164 @@
+.banner {
+  height: 43rem;
+}
+.ps-image {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+.outCircle {
+  width: 200px;
+  height: 200px;
+  // background-color: lightblue;
+  left: 170px;
+  position: absolute;
+  top: 140px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  outline-style: solid;
+  outline-color: #BFBFBF !important;
+  outline-width: 50px;
+}
+
+.duringTwentyOne {
+  -webkit-animation-duration: 21s;
+}
+
+.duringTen {
+  -webkit-animation-duration: 10s;
+}
+
+.duringFour {
+  -webkit-animation-duration: 4s;
+}
+.duringThird {
+  animation-delay: 1s;
+  -webkit-animation-duration: 4s;
+
+  //   background-color: red;
+}
+
+.infinite {
+  -webkit-animation-iteration-count: infinite;
+}
+
+.linear {
+  -webkit-animation-timing-function: linear;
+}
+
+.counter {
+  width: 50px;
+  height: 50px;
+  //    animation-delay: 1s;
+  -webkit-animation-duration: inherit;
+  -webkit-animation-direction: reverse;
+  -webkit-animation-timing-function: inherit;
+  -webkit-animation-iteration-count: inherit;
+  -webkit-animation-name: inherit;
+}
+.counter2 {
+  width: 50px;
+  height: 50px;
+  animation-delay: 1s;
+  -webkit-animation-duration: inherit;
+  -webkit-animation-direction: reverse;
+  -webkit-animation-timing-function: inherit;
+  -webkit-animation-iteration-count: inherit;
+  -webkit-animation-name: inherit;
+}
+
+.rotate {
+  width: 100%;
+  height: 100%;
+  -webkit-animation-name: circle;
+  position: relative;
+  z-index: 10;
+  display: block;
+}
+.rotate2 {
+  width: 100%;
+  height: 100%;
+  -webkit-animation-name: circle2;
+  position: relative;
+  z-index: 10;
+  display: block;
+}
+
+.second {
+  //   top : -100%;
+}
+.third {
+  top: -100%;
+}
+
+.thirdBigger {
+  top: -240%;
+  left: -40%;
+  width: 150%;
+  height: 150%;
+}
+
+.inner {
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: absolute;
+  left: -7px;
+  top: 16px;
+  // background-color: red;
+  display: block;
+  color: white;
+}
+.inner2 {
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: absolute;
+  left: -7px;
+  top: 16px;
+  color: white;
+
+  // background-color: red;
+  display: block;
+  // animation-delay: 1s;
+  // transform: rotate(8deg);
+  // -webkit-transform: rotate(8deg);
+}
+
+.red {
+  // background: red;
+}
+
+.green {
+  background: green;
+}
+
+// @keyframes circle {
+//     from {-webkit-transform: rotateZ(0deg)}
+//     to {-webkit-transform: rotateZ(360deg)}
+// }
+@keyframes circle {
+  0%,
+  10% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@keyframes circle2 {
+  0%,
+  10% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  90%,
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
