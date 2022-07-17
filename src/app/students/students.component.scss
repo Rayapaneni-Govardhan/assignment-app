@@ -1,0 +1,33 @@
+.table-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+td,
+th {
+  border: 1px solid #dee2e6;
+  // padding: 0 !important;
+}
+th {
+    opacity: 0.9;
+}
+
+.table thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.table {
+  width: 90%;
+  margin-top: 34px;
+}
+.class,
+.gender,
+.persona,
+.color {
+  width: 190px;
+}
+.id {
+  width: 90px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}

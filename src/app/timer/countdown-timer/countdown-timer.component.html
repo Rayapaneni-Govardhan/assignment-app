@@ -1,0 +1,23 @@
+<div class="main-container">
+  <circle-progress
+    [percent]="percent"
+    [radius]="120"
+    [outerStrokeWidth]="16"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="outerStokeClr"
+    [innerStrokeColor]="'#1B1B1B'"
+    [showImage]="true"
+    [startFromZero]="false"
+    [animation]="true"
+    [showBackground]="true"
+    [animationDuration]="10"
+  ></circle-progress>
+  <span *ngIf="backUpCount" class="counter">
+    <span>{{ count }}</span>
+    <!-- <span *ngIf="!count">Set Time Limit!</span> -->
+  </span>
+  <span *ngIf="!backUpCount" class="setTimeLimit">
+    <!-- <span >{{ count }}</span> -->
+    <span>Set Time Limit!</span>
+  </span>
+</div>

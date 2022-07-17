@@ -1,3 +1,6 @@
+.main-container {
+  cursor: pointer;
+}
 .banner {
   height: 43rem;
 }
@@ -17,7 +20,7 @@
   -webkit-border-radius: 100px;
   border-radius: 100px;
   outline-style: solid;
-  outline-color: #BFBFBF !important;
+  outline-color: #bfbfbf !important;
   outline-width: 50px;
 }
 

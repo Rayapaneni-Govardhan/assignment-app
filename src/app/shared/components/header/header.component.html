@@ -1,6 +1,16 @@
-<div class="container">
+<div class="main-container">
   <div class="logo-products">
-    <div class="logo">.in</div>
-    <div class="products" (click)="navigateToProducts()" >Products</div>
+    <div class="logo" (click)="navigateToHome()">.in</div>
+    <div class="right-side-options">
+      <div class="products" (click)="navigateToProducts()">Products</div>
+
+      <div class="timer" (click)="navigateToTimer()">
+        <i class="fa fa-clock-o timer-icon" aria-hidden="true"></i>
+      </div>
+
+      <div class="students" (click)="navigateToStudents()">
+        <i class="fa fa-user" aria-hidden="true"></i>
+      </div>
+    </div>
   </div>
 </div>

@@ -13,4 +13,13 @@ export class HeaderComponent implements OnInit {
   navigateToProducts() {
     this.router.navigate(['products/grid-view']);
   }
+  navigateToTimer() {
+    this.router.navigate(['timer']);
+  }
+  navigateToHome() {
+    this.router.navigate(['']);
+  }
+  navigateToStudents() {
+    this.router.navigate(['students']);
+  }
 }
