@@ -12,12 +12,16 @@
     [showBackground]="true"
     [animationDuration]="10"
   ></circle-progress>
-  <span *ngIf="backUpCount" class="counter">
+  <span *ngIf="backUpCount && !timeUpFlag" class="counter">
     <span>{{ count }}</span>
     <!-- <span *ngIf="!count">Set Time Limit!</span> -->
   </span>
   <span *ngIf="!backUpCount" class="setTimeLimit">
     <!-- <span >{{ count }}</span> -->
     <span>Set Time Limit!</span>
+  </span>
+  <span *ngIf="backUpCount&&timeUpFlag" class="setTimeLimit">
+    <!-- <span >{{ count }}</span> -->
+    <span>Time Up!</span>
   </span>
 </div>

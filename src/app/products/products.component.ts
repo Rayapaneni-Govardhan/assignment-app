@@ -292,6 +292,5 @@ export class ProductsComponent implements OnInit {
       pro.noRating = new Array(5 - Math.floor(pro.rating.rate));
     });
     this.productService.setProductsData(this.products);
-    // this.router.navigate(['products/grid-view']);
   }
 }

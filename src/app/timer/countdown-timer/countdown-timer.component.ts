@@ -24,7 +24,9 @@ export class CountdownTimerComponent implements OnInit {
   startFlag: boolean = false;
   pauseFlag: boolean = false;
   resetFlag: boolean = false;
+  timeUpFlag = false;
   events: any = [];
+  eventValueInput: any;
   outerStokeClr = '#DC143C';
   // greenClr='#DC143C'
   constructor() {
@@ -36,9 +38,10 @@ export class CountdownTimerComponent implements OnInit {
   }
   ngOnInit(): void {}
   ngOnChanges(changes: SimpleChanges) {
+    this.eventValueInput = this.eventValue;
     if (this.events.length == 0) {
       this.count = parseInt(this.countValue);
-     
+
       this.backUpCount = parseInt(this.countValue);
       this.outerStokeClr = '#78C000';
     }
@@ -54,6 +57,8 @@ export class CountdownTimerComponent implements OnInit {
     }
   }
   startTimer() {
+    this.timeUpFlag = false;
+    this.outerStokeClr = '#78C000';
     const current = new Date();
 
     const timestamp = current.toTimeString();
@@ -68,7 +73,7 @@ export class CountdownTimerComponent implements OnInit {
     };
 
     if (!this.startFlag) {
-      if (this.count > 0) {
+      if (this.backUpCount > 0) {
         this.timer = setInterval(() => {
           this.count--;
           this.percent = (this.count / this.backUpCount) * 100;
@@ -79,7 +84,7 @@ export class CountdownTimerComponent implements OnInit {
           if (this.count == 0) {
             this.clearTimer();
             this.timeUp.emit('timeUp');
-
+            this.timeUpFlag = true;
           } else {
           }
         }, 1000);
@@ -114,6 +119,7 @@ export class CountdownTimerComponent implements OnInit {
     this.pauseFlag = true;
     this.startFlag = false;
     this.resetFlag = false;
+    this.outerStokeClr = '#FFA500';
     this.clearTimer();
   }
   clearTimer() {
@@ -123,6 +129,7 @@ export class CountdownTimerComponent implements OnInit {
     this.resetFlag = true;
     this.pauseFlag = false;
     this.startFlag = false;
+    this.timeUpFlag = false;
     this.clearTimer();
     this.events = [];
     this.loggedEvents.emit(this.events);

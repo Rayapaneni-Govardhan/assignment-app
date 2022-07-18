@@ -1,22 +1,25 @@
-<div class="main-container">
-  <app-countdown-timer
-    class="app-countdown-timer"
-    [eventValue]="eventValue"
-    [countValue]="countValue"
-    (loggedEvents)="loggedEvents($event)"
-    (timeUp)="timeUp($event)"
-  ></app-countdown-timer>
-  <app-timer-start-and-pause
-    class="app-timer-start-and-pause"
-    (eventType)="newEvent($event)"
-    (countInputValue)="countValueEvent($event)"
-    [events]="events"
-    [timeUp]="timeUpValue"
-  ></app-timer-start-and-pause>
+<div class="content">
+  <div class="header">Timer</div>
+  <div class="main-container">
+    <app-countdown-timer
+      class="app-countdown-timer"
+      [eventValue]="eventValue"
+      [countValue]="countValue"
+      (loggedEvents)="loggedEvents($event)"
+      (timeUp)="timeUp($event)"
+    ></app-countdown-timer>
+    <app-timer-start-and-pause
+      class="app-timer-start-and-pause"
+      (eventType)="newEvent($event)"
+      (countInputValue)="countValueEvent($event)"
+      [events]="events"
+      [timeUp]="timeUpValue"
+    ></app-timer-start-and-pause>
 
-  <app-timestamps class="app-timestamps" [events]="events"></app-timestamps>
-  <app-start-and-pause-count
-    class="app-start-and-pause-count"
-    [events]="events"
-  ></app-start-and-pause-count>
+    <app-timestamps class="app-timestamps" [events]="events"></app-timestamps>
+    <app-start-and-pause-count
+      class="app-start-and-pause-count"
+      [events]="events"
+    ></app-start-and-pause-count>
+  </div>
 </div>

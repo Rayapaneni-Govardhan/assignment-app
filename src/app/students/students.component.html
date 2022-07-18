@@ -1,24 +1,27 @@
-<div class="table-content">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col" *ngFor="let header of tableHeaders">
-          {{ header.label }}
-          <span (click)="sort(header)"
-            ><i class="fa fa-sort" aria-hidden="true"></i>
-          </span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let student of students">
-        <td class="id">{{ student.ID }}</td>
-        <td class="name">{{ student.Name }}</td>
-        <td class="class">{{ student.Class }}</td>
-        <td class="gender">{{ student.Gender }}</td>
-        <td class="persona">{{ student.Persona }}</td>
-        <td class="color">{{ student.Color }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="content">
+  <div class="header">Students</div>
+  <div class="table-content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" *ngFor="let header of tableHeaders">
+            {{ header.label }}
+            <span (click)="sort(header)"
+              ><i class="fa fa-sort" aria-hidden="true"></i>
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td class="id">{{ student.ID }}</td>
+          <td class="name">{{ student.Name }}</td>
+          <td class="class">{{ student.Class }}</td>
+          <td class="gender">{{ student.Gender }}</td>
+          <td class="persona">{{ student.Persona }}</td>
+          <td class="color">{{ student.Color }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

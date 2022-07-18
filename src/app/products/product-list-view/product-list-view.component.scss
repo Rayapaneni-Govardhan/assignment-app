@@ -12,7 +12,7 @@
 }
 .tile {
   width: 70%;
-  height: 270px;
+  height: 297px;
   border: 1px solid rgba(0, 0, 0, 0.272);
   margin: 30px;
   // background: #FBFBFB;
@@ -54,7 +54,7 @@
 }
 .title-text {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
   margin: 0px 10px 0 10px;
   width: 94%;
   white-space: nowrap;
@@ -78,10 +78,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 14px;
 }
 .description {
   // background: #ffdc61;
-  height: 107px;
+  height: 127px;
   width: 100%;
   display: flex;
   //   justify-content: center;
@@ -119,7 +120,7 @@
 .price {
   font-weight: bold;
   opacity: 0.87;
-  font-size: 18px;
+  font-size: 17px;
 }
 .add-icon {
   font-size: 21px;

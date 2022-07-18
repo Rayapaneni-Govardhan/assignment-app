@@ -54,7 +54,7 @@ export class ProductGridViewComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadProducts();
   }
   filterProducts(selectedFilter: any, clear?: any) {
@@ -137,6 +137,9 @@ export class ProductGridViewComponent implements OnInit {
     this.pageStartIndex = 0;
     this.pageEndIndex = 12;
     this.loadedProducts = false;
+    this.productService.getProducts().subscribe((resp: any) => {
+      console.log(resp);
+    });
     this.productService.getProductsData().subscribe((resp: any) => {
       // this.products = resp;
       // this.

@@ -21,8 +21,9 @@ export class TimerStartAndPauseComponent implements OnInit {
   timeUpFlag: boolean = false;
 
   startFlag: boolean = false;
-  pauseFlag: boolean = false;
+  pauseFlag: boolean = true;
   resetFlag: boolean = false;
+  startEmitValue:string='start'
   countInput: any = '';
   constructor() {}
 
@@ -37,7 +38,9 @@ export class TimerStartAndPauseComponent implements OnInit {
     // this.timeUpValue = this.timeUp;
     if (this.timeUp == 'timeUp') {
       this.timeUpFlag = true;
-      this.startFlag = false;
+      this.startFlag = true;
+      this.pauseFlag = true;
+      // this.resetTimer();
     } else {
       this.timeUpFlag = false;
     }
@@ -46,9 +49,20 @@ export class TimerStartAndPauseComponent implements OnInit {
   //   console.log(this.eventValue);
   // }
   startTimer() {
+    if (this.timeUpFlag) {
+      this.resetTimer();
+      setTimeout(() => {
+        this.startNewTimer();
+      });
+    } else {
+      this.startNewTimer();
+    }
+  }
+  startNewTimer() {
     this.countInputValue.emit(this.countInput);
-
-    this.eventType.emit('start');
+    console.log(this.countInput);
+   
+    this.eventType.emit(this.startEmitValue);
 
     this.startFlag = true;
     this.pauseFlag = false;
@@ -64,10 +78,19 @@ export class TimerStartAndPauseComponent implements OnInit {
   resetTimer() {
     this.eventType.emit('reset');
     this.resetFlag = true;
-    this.pauseFlag = false;
+    this.pauseFlag = true;
     this.startFlag = false;
   }
   inputChanges() {
-    this.countInputValue.emit(this.countInput);
+    if (this.countInput == null || this.countInput == undefined) {
+      this.countInput = null;
+
+      console.log('undefined d');
+    } 
+    // else {
+      // console.log(this.countInput);
+
+      this.countInputValue.emit(this.countInput);
+    // }
   }
 }

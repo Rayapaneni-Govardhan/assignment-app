@@ -134,6 +134,9 @@ export class ProductListViewComponent implements OnInit {
     this.pageStartIndex = 0;
     this.pageEndIndex = 12;
     this.loadedProducts = false;
+    this.productService.getProducts().subscribe((resp: any) => {
+      console.log(resp);
+    });
     this.productService.getProductsData().subscribe((resp: any) => {
       // this.products = resp;
       // this.

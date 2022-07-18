@@ -1,3 +1,10 @@
-<p>{{ getCount(eventsData) }}</p>
-<p>Started : {{ startedCount }}</p>
-<p>Paused: {{ pausedCount }}</p>
+<div class="main-container">
+  <span>{{ getCount(eventsData) }}</span>
+
+  <div class="content" *ngIf="startedCount != 0">
+    <div>
+      <div class="text"><span class="start-dot"></span> Started : {{ startedCount }}</div>
+      <div class="text"><span class="pause-dot"></span> Paused: {{ pausedCount }}</div>
+    </div>
+  </div>
+</div>

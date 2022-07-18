@@ -20,4 +20,14 @@ describe('StudentsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("ngOnInit to be Succesful", function() {
+    component.ngOnInit();
+    // spyOn(component.pauseTimer, 'emit');
+    expect(component.ngOnInit);
+  });
+  it("Init to be Succesful", function() {
+    component.sort('ID');
+    // spyOn(component.pauseTimer, 'emit');
+    expect(component.sort);
+  });
 });

@@ -20,4 +20,10 @@ describe('TimestampsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("ngOnChanges to be Succesful", function() {
+    component.ngOnChanges({});
+    // spyOn(component.pauseTimer, 'emit');
+    expect(component.ngOnChanges);
+  });
+  
 });

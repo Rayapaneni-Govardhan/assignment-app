@@ -20,4 +20,21 @@ describe('StartAndPauseCountComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("ngOnChanges to be Succesful", function() {
+    component.ngOnChanges({});
+    // spyOn(component.pauseTimer, 'emit');
+    expect(component.ngOnChanges);
+  });
+  it("Init to be Succesful", function() {
+    let event = [
+      {
+        eventType: 'Started',
+        count: 7,
+        time: '23:33:01',
+        date: 'Mon Jul 18 2022',
+      },
+    ];
+    component.getCount(event);
+    expect(component.getCount);
+  });
 });
