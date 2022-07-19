@@ -1,0 +1,21 @@
+.main-container {
+    padding: 10px 10px 10px 40px;
+}
+.time-stamp {
+    margin-bottom: 5px;
+}
+
+.start-dot {
+  height: 13px;
+  width: 13px;
+  background-color: #78C000;
+  border-radius: 50%;
+  display: inline-block;
+}
+.pause-dot {
+  height: 13px;
+  width: 13px;
+  background-color: orange;
+  border-radius: 50%;
+  display: inline-block;
+}

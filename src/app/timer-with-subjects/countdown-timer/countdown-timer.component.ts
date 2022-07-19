@@ -6,7 +6,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { TimerService } from '../service/timer.service';
+import { TimerWithSubjectsService } from '../service/timer-with-subjects.service';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -14,10 +14,6 @@ import { TimerService } from '../service/timer.service';
   styleUrls: ['./countdown-timer.component.scss'],
 })
 export class CountdownTimerComponent implements OnInit {
-  @Input() eventValue: string | undefined;
-  @Input() countValue: any;
-  @Output() loggedEvents = new EventEmitter<any>();
-  @Output() timeUp = new EventEmitter<any>();
   count: number = 0;
   percent: number = 100;
   backUpCount: number = 0;
@@ -29,34 +25,44 @@ export class CountdownTimerComponent implements OnInit {
   events: any = [];
   eventValueInput: any;
   outerStokeClr = '#DC143C';
+  timerServiceSubscription$: any = {};
+  countValue: any;
+  eventValue: any;
   // greenClr='#DC143C'
-  constructor(private timerService: TimerService) {
+  constructor(private timerService: TimerWithSubjectsService) {
     // this.percent=0;
   }
   getN() {
     let a: any = '1';
     return a;
   }
-  ngOnInit(): void {}
-  ngOnChanges(changes: SimpleChanges) {
-    this.eventValueInput = this.eventValue;
-    if (this.events.length == 0) {
-      this.count = parseInt(this.countValue);
+  ngOnInit(): void {
+    this.timerServiceSubscription$.newEvent = this.timerService
+      .getNewEventData()
+      .subscribe((resp: any) => {
+        this.eventValue = resp;
+        if (this.eventValue == 'start') {
+          this.startTimer();
+        } else if (this.eventValue == 'pause') {
+          this.pauseTimer();
+        } else if (this.eventValue == 'reset') {
+          this.resetTimer();
+        }
+      });
+    this.timerServiceSubscription$.countValue = this.timerService
+      .getCountValueData()
+      .subscribe((resp: any) => {
+        console.log(resp);
+        this.countValue = resp;
+        if (this.events.length == 0) {
+          this.count = parseInt(this.countValue);
 
-      this.backUpCount = parseInt(this.countValue);
-      this.outerStokeClr = '#78C000';
-    }
-    console.log(this.countValue);
-
-    console.log(this.eventValue);
-    if (this.eventValue == 'start') {
-      this.startTimer();
-    } else if (this.eventValue == 'pause') {
-      this.pauseTimer();
-    } else if (this.eventValue == 'reset') {
-      this.resetTimer();
-    }
+          this.backUpCount = parseInt(this.countValue);
+          this.outerStokeClr = '#78C000';
+        }
+      });
   }
+
   startTimer() {
     this.timeUpFlag = false;
     this.outerStokeClr = '#78C000';
@@ -94,7 +100,7 @@ export class CountdownTimerComponent implements OnInit {
     }
     if (this.count != 0) {
       this.events.push(event);
-      this.loggedEvents.emit(this.events);
+      this.timerService.setLoggedEventsData(this.events);
     }
     this.startFlag = true;
     this.pauseFlag = false;
@@ -115,7 +121,7 @@ export class CountdownTimerComponent implements OnInit {
     };
     if (this.count != 0) {
       this.events.push(event);
-      this.loggedEvents.emit(this.events);
+      this.timerService.setLoggedEventsData(this.events);
     }
 
     this.pauseFlag = true;
@@ -134,12 +140,19 @@ export class CountdownTimerComponent implements OnInit {
     this.timeUpFlag = false;
     this.clearTimer();
     this.events = [];
-    this.loggedEvents.emit(this.events);
+
+    this.timerService.setLoggedEventsData(this.events);
     this.count = this.backUpCount;
     // this.backUpCount = 0;
     // this.timeUp.emit('');
     this.timerService.setTimerData('');
     this.percent = 100;
     this.outerStokeClr = '#78C000';
+  }
+  ngOnDestroy() {
+    for (const key in this.timerServiceSubscription$) {
+      const subscription = this.timerServiceSubscription$[key];
+      subscription.unsubscribe();
+    }
   }
 }

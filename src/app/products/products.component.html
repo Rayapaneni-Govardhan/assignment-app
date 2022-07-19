@@ -1,15 +1,28 @@
 <!-- <app-banner></app-banner> -->
 <!-- <button> -->
-<div class="icons">
-  <a [routerLink]="['/products/grid-view']" class="link" routerLinkActive="active"
-    ><i class="fa fa-th-large grid-icon" aria-hidden="true"></i
-  ></a>
-  <!-- </button> -->
-  <!-- <button> -->
-  <a [routerLink]="['/products/list-view']" class="link" routerLinkActive="active"
-    ><i class="fa fa-th-list list-icon" aria-hidden="true"></i
-  ></a>
+<div class="main-container">
+  <div class="loader" *ngIf="!isLoaded">
+    <i class="fa fa-spinner fa-spin spinner" aria-hidden="true"></i>
+  </div>
+  <div class="content" *ngIf="isLoaded">
+    <div class="icons">
+      <a
+        [routerLink]="['/products/grid-view']"
+        class="link"
+        routerLinkActive="active"
+        ><i class="fa fa-th-large grid-icon" aria-hidden="true"></i
+      ></a>
+      <!-- </button> -->
+      <!-- <button> -->
+      <a
+        [routerLink]="['/products/list-view']"
+        class="link"
+        routerLinkActive="active"
+        ><i class="fa fa-th-list list-icon" aria-hidden="true"></i
+      ></a>
+    </div>
+    <div class="icons-filler"></div>
+    <!-- </button> -->
+    <router-outlet></router-outlet>
+  </div>
 </div>
-<div class="icons-filler"></div>
-<!-- </button> -->
-<router-outlet></router-outlet>

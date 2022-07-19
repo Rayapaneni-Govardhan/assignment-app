@@ -1,0 +1,27 @@
+.main-container {
+  position: relative;
+  padding: 50px 40px 40px 70px;
+}
+.counter {
+  position: absolute;
+  top: 147px;
+  left: 175px;
+  font-weight: bolder;
+  opacity: 0.87;
+  font-size: 52px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+}
+.setTimeLimit {
+  position: absolute;
+  top: 170px;
+  left: 135px;
+  font-weight: bolder;
+  opacity: 0.87;
+  font-size: 21px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  color: #00205b;
+}

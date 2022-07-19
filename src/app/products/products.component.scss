@@ -5,7 +5,7 @@
   border-radius: 50%;
   width: 43px;
   height: 43px;
-  margin-right:10px;
+  margin-right: 10px;
 }
 .active {
   background-color: #d9d9d9;
@@ -39,4 +39,14 @@
   width: 43px;
   height: 43px;
   background: white;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+.spinner {
+  font-size: 43px;
 }

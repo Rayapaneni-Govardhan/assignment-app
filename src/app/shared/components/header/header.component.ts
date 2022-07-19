@@ -16,10 +16,16 @@ export class HeaderComponent implements OnInit {
   navigateToTimer() {
     this.router.navigate(['timer']);
   }
+  navigateToTimerWithSubjects() {
+    this.router.navigate(['timer-with-subjects']);
+  }
   navigateToHome() {
     this.router.navigate(['']);
   }
   navigateToStudents() {
     this.router.navigate(['students']);
+  }
+  navigateToDynamicDivs() {
+    this.router.navigate(['dynamic-divs']);
   }
 }

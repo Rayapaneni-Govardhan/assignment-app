@@ -1,0 +1,12 @@
+<div class="main-container">
+  <div>
+    <div class="time-stamp" *ngFor="let event of eventsData">
+      <span
+      
+        [ngClass]="event.eventType == 'Started' ? 'start-dot' : 'pause-dot'"
+      ></span>
+
+      {{ event.eventType + " at " + event.date + " " + event.time }}
+    </div>
+  </div>
+</div>

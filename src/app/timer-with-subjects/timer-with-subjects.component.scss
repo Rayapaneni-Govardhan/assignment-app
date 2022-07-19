@@ -1,0 +1,29 @@
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .app-countdown-timer {
+    width: 50%;
+    min-height: 350px;
+  }
+  .app-start-and-pause-count {
+    width: 50%;
+    height: 370px;
+  }
+  .app-timer-start-and-pause {
+    width: 50%;
+    min-height: 410px;
+  }
+  .app-timestamps {
+    width: 50%;
+    min-height: 370px;
+  }
+  .header {
+      font-size: 19px;
+      opacity: 0.87;
+      font-weight: bold;
+      padding: 10px 20px;
+  }
+  

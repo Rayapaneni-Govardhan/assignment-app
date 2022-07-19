@@ -1,0 +1,23 @@
+<div class="main-container">
+  <div
+    class="divs-container"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="20"
+    [infiniteScrollDisabled]="loadedDivs"
+    (scrolled)="loadMore()"
+  >
+    <div class="tile-card" *ngFor="let div of divElements">
+      <div class="action-button-section">
+        <button
+       
+        class="action-button"
+        (click)="showAlert(div)"
+       
+      >
+        <span>Click Here</span>
+      </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,14 +24,24 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./timer/timer.module').then((m) => m.TimerModule),
   },
-  { path: 'students', loadChildren: () => import('./students/students.module').then(m => m.StudentsModule) },
+  {
+    path: 'students',
+    loadChildren: () =>
+      import('./students/students.module').then((m) => m.StudentsModule),
+  },
+  {
+    path: 'timer-with-subjects',
+    loadChildren: () =>
+      import('./timer-with-subjects/timer-with-subjects.module').then(
+        (m) => m.TimerWithSubjectsModule
+      ),
+  },
+  { path: 'dynamic-divs', loadChildren: () => import('./dynamic-divs/dynamic-divs.module').then(m => m.DynamicDivsModule) },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  declarations: [
-       
-],
+  declarations: [],
 })
 export class AppRoutingModule {}

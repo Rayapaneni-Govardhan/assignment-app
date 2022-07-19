@@ -1,4 +1,8 @@
 <div class="main-content" (click)="navigateToProducts()">
+  <div class="loader" *ngIf="!isLoaded">
+    <i class="fa fa-spinner fa-spin spinner" aria-hidden="true"></i>
+  </div>
+  <div *ngIf="isLoaded">
   <div class="main-container">
     <img
       class="banner"
@@ -30,4 +34,5 @@
       </div>
     </div> -->
   </div>
+</div>
 </div>

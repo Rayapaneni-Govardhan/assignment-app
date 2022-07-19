@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { TimerService } from './service/timer.service';
 
 @Component({
   selector: 'app-timer',
@@ -10,22 +12,38 @@ export class TimerComponent implements OnInit {
   events: any = [];
   countValue: any;
   timeUpValue: any;
-  constructor() {}
+  timerServiceSubscription$: Subscription;
+  constructor(
+    private timerService: TimerService,
+    private cdref: ChangeDetectorRef
+  ) {}
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.timerServiceSubscription$ = this.timerService
+      .getTimerData()
+      .subscribe((resp: any) => {
+        this.timeUpValue = resp;
+        console.log(resp);
+      });
+  }
+  ngAfterContentChecked() {
+    this.cdref.detectChanges();
+  }
   newEvent(evt: any) {
     console.log('triggered');
 
     this.eventValue = evt;
   }
   timeUp(evt: any) {
-    this.timeUpValue = evt;
+    // this.timeUpValue = evt;
   }
   loggedEvents(evt: any) {
     this.events = evt;
   }
   countValueEvent(evt: any) {
     this.countValue = evt;
+  }
+  ngOnDestroy() {
+    this.timerServiceSubscription$.unsubscribe();
   }
 }

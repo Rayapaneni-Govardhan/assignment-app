@@ -1,0 +1,58 @@
+<div class="main-container">
+  <form action="" name="form" #timerForm="ngForm">
+    <div class="form-group">
+      <div class="input-with-actions">
+        <label for="countInput">Timer Limit :</label>
+        <input
+          type="number"
+          id="count"
+          name="count"
+          [disabled]="eventsData.length > 0"
+          [(ngModel)]="countInput"
+          #count="ngModel"
+          (keyup)="inputChanges()"
+          required
+        />
+        <div class="input-error">
+          <span
+            class="text-danger"
+            *ngIf="count.errors && (count.dirty || count.touched)"
+          >
+            <div [hidden]="!count.errors['required']">
+              Timer Limit is required
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="actions">
+    <button
+      [disabled]="countInput == 0 || countInput == null"
+      class="btn btn-start"
+      (click)="startTimer()"
+      *ngIf="!startFlag"
+    >
+      <span>Start</span>
+    </button>
+    <button class="btn btn-pause" (click)="pauseTimer()" *ngIf="!pauseFlag">
+      Pause
+    </button>
+    <button
+      class="btn btn-reset"
+      (click)="resetTimer()"
+      *ngIf="eventsData.length > 0"
+    >
+      Reset
+    </button>
+  </div>
+
+  <div class="paused-events">
+    <div class="pause-text" *ngFor="let event of eventsData">
+      <span *ngIf="event.eventType == 'Paused'">
+        <span class="pause-dot"></span
+        > {{ event.eventType + " at " + event.count }}</span
+      >
+    </div>
+  </div>
+</div>

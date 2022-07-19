@@ -165,3 +165,12 @@
     -webkit-transform: rotateZ(360deg);
   }
 }
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+.spinner {
+  font-size: 43px;
+}
