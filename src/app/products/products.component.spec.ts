@@ -11,14 +11,26 @@ import { DebugElement } from '@angular/core';
 
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { IndividualConfig, ToastrService } from 'ngx-toastr';
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
-
+  const toastrService = {
+    success: (
+      message?: string,
+      title?: string,
+      override?: Partial<IndividualConfig>
+    ) => {},
+    error: (
+      message?: string,
+      title?: string,
+      override?: Partial<IndividualConfig>
+    ) => {},
+  };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule,RouterTestingModule],
-      providers: [ProductService],
+      providers: [ProductService,{ provide: ToastrService, useValue: toastrService }],
       declarations: [ProductsComponent],
     }).compileComponents();
 
