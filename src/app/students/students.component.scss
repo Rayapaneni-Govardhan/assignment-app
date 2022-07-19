@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 td,
 th {
@@ -20,6 +21,7 @@ th {
 .table {
   width: 90%;
   margin-top: 34px;
+  
 }
 .class,
 .gender,
