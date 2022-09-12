@@ -1,29 +1,28 @@
 .main-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .app-countdown-timer {
-    width: 730px;
-    min-height: 350px;
-  }
-  .app-start-and-pause-count {
-    width: 730px;
-    height: 370px;
-  }
-  .app-timer-start-and-pause {
-    width: 730px;
-    min-height: 410px;
-  }
-  .app-timestamps {
-    width: 730px;
-    min-height: 370px;
-  }
-  .header {
-      font-size: 19px;
-      opacity: 0.87;
-      font-weight: bold;
-      padding: 10px 20px;
-  }
-  
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.app-countdown-timer {
+  width: 47%;
+  min-height: 350px;
+}
+.app-start-and-pause-count {
+  width: 730px;
+  height: 370px;
+}
+.app-timer-start-and-pause {
+  width: 43%;
+  min-height: 410px;
+}
+.app-timestamps {
+  width: 730px;
+  min-height: 370px;
+}
+.header {
+  font-size: 19px;
+  opacity: 0.87;
+  font-weight: bold;
+  padding: 10px 20px;
+}
